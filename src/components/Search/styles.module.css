@@ -1,0 +1,23 @@
+.searchHolder {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 1023px;
+  height: 48px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 20px 12px;
+  padding-left: 52px;
+  border: 1px solid #CFCFCF;
+  border-radius: 8px;
+  background-color: #F3F3F3;
+}
+
+.searchIcon {
+  position: absolute;
+  pointer-events: none;
+  margin-left: 20px;
+  color: #D3D3D3;
+}

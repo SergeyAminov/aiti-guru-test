@@ -1,0 +1,22 @@
+.notifCountHolder {
+  position: relative;
+  display: inline-block;
+}
+
+.notifBadge {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  background-color: #797FE9;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  box-sizing: border-box;
+}
