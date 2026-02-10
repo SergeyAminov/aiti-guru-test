@@ -1,0 +1,99 @@
+.content {
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.table {
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.trh {
+  height: 71px;
+  color: #C7C7CC;
+}
+
+.tr {
+  height: 71px;
+  border: 1px solid #E2E2E2;
+  border-left: none;
+  border-right: none;
+}
+
+.td {
+  text-align: center;
+}
+
+.titleTh {
+  text-align: left;
+  width: 250px;
+}
+
+.checkbox {
+  width: 56px;
+}
+
+.titleTd {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.img{
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  margin-right: 18px;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.category {
+  color: #E2E2E2;
+}
+
+.titleCategory {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: max-content;
+}
+
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.add {
+  width: 52px;
+  height: 27px;
+  border: none;
+  border-radius: 13.5px;
+  background-color: #242EDB;
+  text-align: center;
+  color: white;
+  font-weight: 400;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #E2E2E2;
+  border-radius: 12px;
+  color: #E2E2E2;
+  cursor: pointer;
+}

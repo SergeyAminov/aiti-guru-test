@@ -1,0 +1,27 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  width: 30px;
+  height: 30px;
+  color: #CFCFCF;
+  border: 1px solid #E2E2E2;
+  background-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.current {
+  border: none;
+  background-color: #242EDB;
+  color: white;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
