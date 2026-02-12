@@ -1,11 +1,15 @@
-import { useEffect, useState } from "react"
+import { Dispatch, SetStateAction, useEffect, useState } from "react"
 import { Product, ProductsResponse } from "./types"
 import styles from './styles.module.css'
 import { formatNumber } from "../../util/functions"
 import TableHeader from "../TableHeader/TableHeader"
 import TablePagination from "../TablePagination/TablePagination"
 
-const Table = () => {
+type TProps = {
+  setIsModalOpen: Dispatch<SetStateAction<boolean>>
+}
+
+const Table = ({setIsModalOpen}: TProps) => {
   const [tableData, setTableData] = useState<Product[]>([])
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -78,7 +82,7 @@ const Table = () => {
   if (error) return <div>Ошибка: {error}</div>
   return (
     <div className={styles.content}>
-      <TableHeader />
+      <TableHeader setIsModalOpen={setIsModalOpen} />
 
       <table className={styles.table}>
         <thead>
