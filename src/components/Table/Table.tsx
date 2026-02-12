@@ -9,15 +9,20 @@ type TProps = {
   setIsModalOpen: Dispatch<SetStateAction<boolean>>
 }
 
+export type TSort = "" | "asc" | "desc"
+
 const Table = ({setIsModalOpen}: TProps) => {
   const [tableData, setTableData] = useState<Product[]>([])
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   // Запрос данных с сервера
-  const fetchData = async () => {
+  const fetchData = async (sort: TSort) => {
     try {
-      const response = await fetch('https://dummyjson.com/products?limit=10&skip=10')
+      let url = 'https://dummyjson.com/products?limit=10&skip=10'
+      if (sort.length > 0) url = url + '&sortBy=price&order=' + sort
+
+      const response = await fetch(url)
       const data: ProductsResponse = await response.json()
       setTableData(data.products)
     } catch (err) {
@@ -28,7 +33,7 @@ const Table = ({setIsModalOpen}: TProps) => {
   }
 
   useEffect(() => {
-    fetchData()
+    fetchData('')
   }, [])
 
   // Получение ячейки с названием и изображением товара
@@ -82,7 +87,10 @@ const Table = ({setIsModalOpen}: TProps) => {
   if (error) return <div>Ошибка: {error}</div>
   return (
     <div className={styles.content}>
-      <TableHeader setIsModalOpen={setIsModalOpen} />
+      <TableHeader
+        setIsModalOpen={setIsModalOpen}
+        fetchData={fetchData}
+      />
 
       <table className={styles.table}>
         <thead>
