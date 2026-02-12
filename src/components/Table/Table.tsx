@@ -33,7 +33,7 @@ const Table = ({setIsModalOpen}: TProps) => {
   }
 
   useEffect(() => {
-    fetchData('')
+    fetchData(localStorage.getItem("sort") as TSort)
   }, [])
 
   // Получение ячейки с названием и изображением товара

@@ -9,7 +9,7 @@ type TProps = {
 
 // Заголовок таблицы
 const TableHeader = ({setIsModalOpen, fetchData}: TProps) => {
-  const [sortType, setSortType] = useState<TSort>("")
+  const [sortType, setSortType] = useState<TSort>(localStorage.getItem("sort") as TSort)
 
   // Обработчик клика по кнопке сортировки (сортировка происходит по цене)
   const handleSort = () => {
@@ -26,6 +26,7 @@ const TableHeader = ({setIsModalOpen, fetchData}: TProps) => {
       setSortType('')
     }
 
+    localStorage.setItem("sort", s)
     fetchData(s)
   }
 
